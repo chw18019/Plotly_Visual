@@ -26,7 +26,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
+server = app.server
 
 app.layout = html.Div(
     className ="row",
@@ -40,7 +40,7 @@ app.layout = html.Div(
         {"name": i, "id": i} for i in df.columns
     ],
     page_current = 0,
-    page_size = 10,
+    page_size = 20,
     page_action = "custom",
     filter_action = "custom",
     filter_query = "",
@@ -198,8 +198,8 @@ def update_output(rows):
 
                 }
 
-#if __name__ == '__main__':
-server = app.server
+if __name__ == '__main__':
+    app.run_server(debug=True)
 
     #df['Dummy'] = np.where(df['sknt'] > sknt1, 1, 0) #) & (df['sknt'] > 20)
     #df['shift'] = df['Dummy'].ne(df['Dummy'].shift())
