@@ -198,8 +198,8 @@ def update_output(rows):
 
                 }
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
+#if __name__ == '__main__':
+app.run_server(debug=True)
 
     #df['Dummy'] = np.where(df['sknt'] > sknt1, 1, 0) #) & (df['sknt'] > 20)
     #df['shift'] = df['Dummy'].ne(df['Dummy'].shift())
