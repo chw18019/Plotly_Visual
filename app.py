@@ -11,7 +11,7 @@ import numpy as np
 import plotly.graph_objs as go
 
 
-df = pd.read_csv("https://raw.githubusercontent.com/chw18019/Plotly_Visual/main/cleanBDL.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/chw18019/Datasets/main/cleanBDL.csv")
 
 def get_rainny_days(df, value):
     df['Dummy'] = np.where(df['sknt'] > value, 1, 0)
